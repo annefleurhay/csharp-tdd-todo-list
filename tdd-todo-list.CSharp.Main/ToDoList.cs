@@ -49,9 +49,13 @@ namespace tdd_todo_list.CSharp.Main
             return sb.ToString();
         }
 
-        public string Found(string task)
+        public string NotFound(string task)
         {
-            return task;
+            if (Items.ContainsKey(task))
+            {
+                return "Item found";
+            }
+            return "Item not found!";
         }
 
 
@@ -69,6 +73,29 @@ namespace tdd_todo_list.CSharp.Main
             return false;
         }
 
-        
+        public string ascendingOrder()
+        {
+            StringBuilder sb = new StringBuilder();
+            var sortedItems = Items.OrderBy(item => item.Key);
+
+            foreach (var item in sortedItems)
+            {
+                sb.Append(item.Key);
+            }
+            return sb.ToString();
+        }
+
+        public string descendingOrder()
+        {
+            StringBuilder sb = new StringBuilder();
+            var sortedItems = Items.OrderByDescending(item => item.Key);
+
+            foreach(var item in sortedItems)
+            {
+                sb.Append(item.Key);
+            }
+            return sb.ToString();
+            
+        }
     }
 }

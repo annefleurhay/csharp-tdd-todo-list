@@ -62,10 +62,11 @@ namespace tdd_todo_list.CSharp.Test
             string task = "Drink redbull";
 
             todo.Items.Add(task, false);
+            todo.Items.Remove(task);
 
-            string found = todo.Found(task);
+            string foundNone = todo.NotFound(task);
 
-            Assert.IsTrue(found == "Drink redbull");
+            Assert.IsTrue(foundNone == "Item not found!");
         }
 
         [Test] //- I want to be able to get only the complete tasks. returning the key if value == true 
@@ -83,8 +84,7 @@ namespace tdd_todo_list.CSharp.Test
             //assert
             Assert.IsTrue(CompletedTasks == "SleepCode"); // hoe zorg ik dat hier een spatie tussen komt? 
 
-            
-
+           
         }
 
         [Test]
@@ -121,6 +121,38 @@ namespace tdd_todo_list.CSharp.Test
             //assert
             Assert.IsTrue(0 == todo.Items.Count);
 
+        }
+
+        [Test]
+        public void Ascending()
+        {
+            TodoList todo = new TodoList();
+
+            todo.Items.Add("Drink redbull", true);
+            todo.Items.Add("Sleep", true);
+            todo.Items.Add("Code", true);
+
+            string AscOrder = todo.ascendingOrder();
+
+            Assert.IsTrue(AscOrder == "CodeDrink redbullSleep"); //how do i make sure there is a space inbetween?
+
+
+        }
+
+        [Test]
+        public void Descending()
+        {
+            TodoList todo = new TodoList();
+            
+            todo.Items.Add("Drink redbull", true);
+            todo.Items.Add("Sleep", true);
+            todo.Items.Add("Code", true);
+
+            string DescOrder = todo.descendingOrder();
+
+            Assert.IsTrue(DescOrder == "SleepDrink redbullCode");
+
+        
         }
 
         
