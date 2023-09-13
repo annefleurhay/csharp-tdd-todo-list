@@ -11,6 +11,8 @@ namespace tdd_todo_list.CSharp.Main
 
         public Dictionary<string, bool> Items { get; set; } = new Dictionary<string, bool>();
 
+        //public Dictionary<string, bool> CompletedItems { get { return Items.Where(x => x.Value == true).ToDictionary(x => x.Key, x => x.Value); } }
+
         public string CompletedTasks()
         {
             StringBuilder sb = new StringBuilder();
@@ -18,9 +20,9 @@ namespace tdd_todo_list.CSharp.Main
             {
                 if (item.Value == true)
                     
-                    sb.Append(item.Key);
+                    sb.Append(item.Key + " ");
             }
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
         }
 
         

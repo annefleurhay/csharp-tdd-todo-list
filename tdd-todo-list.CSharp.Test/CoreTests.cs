@@ -73,7 +73,7 @@ namespace tdd_todo_list.CSharp.Test
         public void ShowCompleted()
         {   //arrange
             TodoList todo = new TodoList();
-            
+
 
             //act
             todo.Items.Add("Drink redbull", false);
@@ -81,8 +81,26 @@ namespace tdd_todo_list.CSharp.Test
             todo.Items.Add("Code", true);
             string CompletedTasks = todo.CompletedTasks();
 
+            /* var item = Items.CompletedItems[0]
+             * 
+             * Assert.IsTrue(item.Value)
+             
+             
+             */
+
+
+            
+            /* This is a combination of act and assert
+            foreach(var item in Items.CompletedItems) 
+            {
+            
+            Assert.IsTrue(item.Value)
+            }
+            
+            
+                   */         
             //assert
-            Assert.IsTrue(CompletedTasks == "SleepCode"); // hoe zorg ik dat hier een spatie tussen komt? 
+            Assert.IsTrue(CompletedTasks == "Sleep Code"); // hoe zorg ik dat hier een spatie tussen komt? 
 
            
         }
