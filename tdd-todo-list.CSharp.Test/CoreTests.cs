@@ -120,7 +120,7 @@ namespace tdd_todo_list.CSharp.Test
 
         }
 
-        [Test] // nog een keer naar kijken want nu wordt gewoon alels verwijdert en geen specifieke to do item 
+        [Test] 
         public void RemoveTask()
         {
             //arrange
@@ -152,7 +152,7 @@ namespace tdd_todo_list.CSharp.Test
 
             string AscOrder = todo.ascendingOrder();
 
-            Assert.IsTrue(AscOrder == "CodeDrink redbullSleep"); //how do i make sure there is a space inbetween?
+            Assert.IsTrue(AscOrder == "Code Drink redbull Sleep"); //how do i make sure there is a space inbetween?
 
 
         }
@@ -168,7 +168,7 @@ namespace tdd_todo_list.CSharp.Test
 
             string DescOrder = todo.descendingOrder();
 
-            Assert.IsTrue(DescOrder == "SleepDrink redbullCode");
+            Assert.IsTrue(DescOrder == "Sleep Drink redbull Code");
 
         
         }

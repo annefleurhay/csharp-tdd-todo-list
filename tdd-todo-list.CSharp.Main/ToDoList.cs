@@ -82,9 +82,9 @@ namespace tdd_todo_list.CSharp.Main
 
             foreach (var item in sortedItems)
             {
-                sb.Append(item.Key);
+                sb.Append(item.Key + " ");
             }
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
         }
 
         public string descendingOrder()
@@ -94,9 +94,9 @@ namespace tdd_todo_list.CSharp.Main
 
             foreach(var item in sortedItems)
             {
-                sb.Append(item.Key);
+                sb.Append(item.Key + " ");
             }
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
             
         }
     }
